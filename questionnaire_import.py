@@ -53,6 +53,8 @@ def generate_json_file(categorie, titre, url):
         except:
             print(f"Exception dans la désérialisation ou de l'utilisation des données (questionnaire: {titre}, url:{url}) ")
 
-    
-for quizz_data in open_quizz_db_data:
-    generate_json_file(quizz_data[0], quizz_data[1], quizz_data[2])
+# Conditionneur du programme principal pour pouvoir l'appeler depuis tes.py
+if __name__ == "__main__":
+    # Questionnaire programme principal    
+    for quizz_data in open_quizz_db_data:
+        generate_json_file(quizz_data[0], quizz_data[1], quizz_data[2])
